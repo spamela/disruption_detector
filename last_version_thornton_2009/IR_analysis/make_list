@@ -1,0 +1,7 @@
+#!/bin/sh
+#Make ir shots list
+
+ls ~gdt/IRdata/air0* | cut -c 22- | cut -c 1-6 | uniq | sed 's/\.//g' > mwir_data_list.txt
+ls ~gdt/IRdata/aii0* | cut -c 22- | cut -c 1-6 | uniq | sed 's/\.//g' > lwir_data_list.txt 
+
+comm -12 lwir_data.txt mwir_data.txt > irlist.txt
